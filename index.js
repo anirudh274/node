@@ -46,7 +46,7 @@ var server = http.createServer(function(req, res){
             'method' : method,
             'headers' : headers,
             'payload' : buffer
-        }
+        };
 
         //route the  request to the handler specified in the router
         choosenHandler(data, function(statuscode,payload){
@@ -80,7 +80,7 @@ var server = http.createServer(function(req, res){
 
 // start the server, and have it listen on port 3000
 server.listen(3000, function(){
-console.log("the server listening at port 3000")
+console.log("the server listening at port 3000");
 
 }
 );
