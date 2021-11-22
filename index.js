@@ -24,7 +24,7 @@ var server = http.createServer(function(req, res){
     var method = req.method.toLowerCase();
 
     //get the headers as an object
-    var headers = req.headers; 
+    var headers = req.headers;
 
     //get the payload if any
     var decoder = new StringDecoder('utf-8');
@@ -70,7 +70,7 @@ var server = http.createServer(function(req, res){
 
 
         });
-        
+
 
     });
 
@@ -93,13 +93,13 @@ handlers.sample = function(data, callback){
     // Callback a http status code, and a payload and payload should be object(Cuz we want our API to work with JSON)
     callback(406,{'name': 'my name is sample handler'});
 
-}
+};
 
 //Not found handler
 handlers.notfound = function(data,callback){
-    callback(404) //no need of payload because we can are just ending wiht 404 error
+    callback(404); //no need of payload because we can are just ending wiht 404 error
 
-}
+};
 
 //Define a request router
 var router  ={
