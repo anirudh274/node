@@ -1,5 +1,5 @@
 /*
-primary fule for the API
+primary rule for the API
 */
 
 //Dependencies
