@@ -6,6 +6,7 @@ primary rule for the API
 var http = require('http');
 var url =  require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
+var config = require('./config')
 
 // the server should  repsond to all requests with a string
 var server = http.createServer(function(req, res){
@@ -61,7 +62,8 @@ var server = http.createServer(function(req, res){
             var payloadstring = JSON.stringify(payload);
 
             // Return the response
-            res.writeHead(statuscode);  // we using built-in righthead function taht comes on every response object received by the HTTP server to right the status code
+            res.setHeader('content-type','application/json') //we are sending json and it should parse the response as if its json
+            res.writeHead(statuscode);  // we using built-in righthead function that comes on every response object received by the HTTP server to right the status code
             res.end(payloadstring);
 
             //log the request path
